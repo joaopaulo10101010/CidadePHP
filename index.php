@@ -1,6 +1,7 @@
 <?php
 require_once 'conexao.php';
 
+
 $produtos = [];
 
 $query = "SELECT * FROM Produto ORDER BY nome";
@@ -48,6 +49,11 @@ if ($resultado) {
                         <tr>
                             <td><?php echo $produto['nome']; ?></td>
                             <td><?php echo $produto['codBarra']; ?></td>
+                            <td class="actions">
+                                <a href="">Editar</a>
+                                
+                                <a href="excluir.php?codigo=<?php echo $produtos['codigo']; ?>" class="delete-btn" onclick="return confirm('Tem certeza que deseja excluir este Produto?')">Excluir</a>
+                            </td>
                         </tr>
                         <?php endforeach; ?> 
                 </tbody>
