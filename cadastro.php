@@ -1,3 +1,4 @@
+
 <?php
 
 require_once 'conexao.php';
@@ -25,35 +26,32 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 ?>
 
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <link rel="stylesheet" href="./src/css/estilo.css">
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="estilo.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar</title>
 </head>
 <body>
+   
+    <div class="container">
     <header>
         <h1>Cadastro de Produtos</h1>
     </header>
-    <div class="container">
-        <h2>Cadastrar</h2>
         <form method="POST">
             <div class="group">
                 <label for="nome">Nome do Produto</label>
                 <input type="text" id="nome" name="nome" required>
             </div>
             <div class="group">
-                <label for="barras">Codigo de Barra</label>
+                <label for="barras">Codigo de Barras</label>
                 <input type="text" id="barras" name="barras" required>
             </div>
             <button type="submit">Cadastrar</button>
         </form>
-        <?php
-        echo($mensagem);        
-        ?>
+        <?php echo $mensagem; ?>
         <p><a href="index.php">Voltar para a lista de Produtos</a></p>
     </div>
 </body>
